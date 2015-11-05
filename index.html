@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="node_modules/redux/dist/redux.min.js"></script>
+    <script src="app.js"></script>
+
 </head>
 <body>
-Entryone's page
+Angular-Redux demo
+<hr/>
+<div ng-controller="TodoListController as todoList">
+
+
+    <input type="text" ng-model="todoList.task" /> <button ng-click="todoList.addTask(todoList.task)" >add</button>
+
+
+     <ul>
+         <li ng-repeat="task in todoList.list" ng-bind="task" ></li>
+     </ul>
+
+</div>
+
 </body>
 </html>
